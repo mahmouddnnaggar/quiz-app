@@ -1,0 +1,206 @@
+:root {
+  --primary-color: #4834d4; /* Deeper, more vibrant violet */
+  --secondary-color: #686de0;
+  --accent-color: #22a6b3;
+  --background-dark: #f9fbfd; /* Very subtle off-white blue */
+  --background-light: #ffffff;
+  --text-color: #2d3436;
+  --text-muted: #636e72;
+  --card-bg: #ffffff;
+  --border-radius: 20px; /* Slightly more rounded */
+  --transition-speed: 0.3s;
+  --font-main: 'Outfit', sans-serif;
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Subtle gradient */
+  font-family: var(--font-main);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* ======> Global Rules */
+.quiz-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  border-radius: var(--border-radius);
+  padding: 20px; /* More breathing room */
+  box-shadow: var(--shadow-soft);
+}
+
+.heading h1 {
+  font-weight: 800; /* Bolder */
+  font-size: 35px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Gradient text */
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+/* ======> Form Controls */
+/* ======> Form Controls */
+.form-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.form-control,
+.form-select {
+  background-color: #f1f3f5;
+  border: 2px solid transparent;
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-control:hover,
+.form-select:hover {
+  background-color: #e9ecef;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(72, 52, 212, 0.1);
+  color: var(--text-color);
+}
+
+.form-select option {
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+/* ======> Buttons */
+.btn-start {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all var(--transition-speed);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(72, 52, 212, 0.2);
+}
+
+.btn-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(72, 52, 212, 0.3);
+  color: white;
+}
+
+.btn-start:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(72, 52, 212, 0.2);
+}
+
+/* ======> Question Card (Future Proofing) */
+.question {
+  background-color: var(--card-bg); /* Kept consistent */
+  border-radius: var(--border-radius);
+  padding: 0; /* Let children handle padding or keep minimal */
+  margin-top: 1rem;
+}
+
+.question h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  line-height: 1.4;
+  font-size: 19px;
+}
+
+.choices {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 16px;
+}
+
+.choices li {
+  flex: 1 1 calc(50% - 0.5rem);
+  background: #fff;
+  border: 2px solid #f1f3f5;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.choices li:hover {
+  background: #f8f9fa;
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+  color: var(--primary-color);
+}
+
+.correct {
+  background-color: #00b894 !important;
+  border-color: #00b894 !important;
+  color: white;
+}
+
+.wrong {
+  background-color: #d63031 !important;
+  border-color: #d63031 !important;
+  color: white;
+}
+
+.score-color {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Placeholder for JS injected content styling */
+.questions-container {
+  width: 100%;
+}
+
+/* ======> Final Screen */
+.congrats-icon {
+  font-size: 4rem;
+  color: #fab1a0; /* Soft orange/gold */
+  background: linear-gradient(45deg, #fab1a0, #ff7675);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: float 3s ease-in-out infinite;
+}
+
+.finish-score {
+  color: var(--primary-color);
+  font-family: var(--font-main);
+  line-height: 1;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
