@@ -9,7 +9,8 @@ export class Question {
     this.question = questions[this.index].question;
     this.correctAnswer = questions[this.index].correct_answer;
     this.inCorrectAnswers = questions[this.index].incorrect_answers;
-    this.allAnswers = [...this.inCorrectAnswers, this.correctAnswer];
+    // this.allAnswers = [...this.inCorrectAnswers, this.correctAnswer];
+    this.allAnswers = [...this.inCorrectAnswers, this.correctAnswer].sort();
     this.category = questions[this.index].category;
     this.isAnswered = false;
   }
